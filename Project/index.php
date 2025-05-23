@@ -3,7 +3,8 @@
 <head>
     <title>Jenkins HandsOn</title>
 </head>
-<body style="background-image: url('Images/github.png');">
+<body >
    <h1 style="color: white;">Welcome !!!!!!!!!!!</h1>
+    <img src="Images/github.png">
 </body>
 </html>

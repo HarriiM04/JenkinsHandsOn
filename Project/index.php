@@ -6,6 +6,6 @@
 <body >
    <h1>Welcome !!!!!!!!!!!</h1>
     <h4>GitHub</h4>
-    <img src="Images/github.png">
+    <img src="Images/linkedin.png">
 </body>
 </html>

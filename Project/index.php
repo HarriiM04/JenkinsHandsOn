@@ -4,7 +4,8 @@
     <title>Jenkins HandsOn</title>
 </head>
 <body >
-   <h1 style="color: white;">Welcome !!!!!!!!!!!</h1>
+   <h1>Welcome !!!!!!!!!!!</h1>
+    <h4>GitHub</h4>
     <img src="Images/github.png">
 </body>
 </html>

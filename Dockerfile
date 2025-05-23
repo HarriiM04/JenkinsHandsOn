@@ -1,2 +1,2 @@
-FROM php:8.2-apache
+FROM hshar/webapp
 COPY ./Project /var/www/html/

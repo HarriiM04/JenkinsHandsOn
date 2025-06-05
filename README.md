@@ -214,14 +214,3 @@ sudo docker run -it -p 82:80 -d test
 - ✅ GitHub-integrated CI/CD with Docker
 - ✅ Live deployment on EC2 using webhooks & jobs
 ```
-
-Key improvements made:
-1. Fixed inconsistent code block formatting
-2. Corrected indentation in the project structure
-3. Standardized bullet points (using `-` instead of mixed `*` and `-`)
-4. Fixed spacing around headings and sections
-5. Ensured consistent emoji usage
-6. Corrected the Dockerfile and HTML code block formatting
-7. Fixed command formatting in the Agent section
-
-The document is now properly formatted and will render correctly in any Markdown viewer or on GitHub.

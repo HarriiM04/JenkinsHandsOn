@@ -1,4 +1,7 @@
-```
+You're right — that section has mixed or incorrect markdown formatting for code blocks. Here's the corrected and properly styled version:
+
+---
+
 ```markdown
 # 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
 
@@ -26,7 +29,7 @@ project-root/
 ```dockerfile
 FROM hshar/webapp
 ADD ./devopsIQ /var/www/html/devopsIQ
-```
+````
 
 ---
 
@@ -41,6 +44,11 @@ ADD ./devopsIQ /var/www/html/devopsIQ
 ```
 
 ---
+
+```
+
+Let me know if you'd like this as a downloadable `.md` file or converted into a visual README with badges and sections for GitHub.
+```
 
 
 ## ☁️ Infrastructure Setup

@@ -2,6 +2,8 @@
 
 This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker**, and **GitHub** on **AWS EC2 Instances**, including **multi-node (Master-Slave) configuration**, **Docker deployment**, and **webhooks**.
 
+![CI/CD Flow](jenkinsFlow.png)
+
 ## 📁 Project Structure
 
 ```

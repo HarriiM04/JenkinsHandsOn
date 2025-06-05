@@ -1,6 +1,4 @@
-Here's a complete `README.md` file for your Jenkins + Docker + GitHub CI/CD project, formatted clearly for documentation or GitHub usage:
-
----
+```
 
 ```markdown
 # 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
@@ -213,20 +211,7 @@ sudo docker run -it -p 82:80 -d test
 * `http://<slave1-ip>:82` → Deployed site from Job 1
 * `http://<slave2-ip>:80` → Deployed site from Job 2
 
----
-
-## 👨‍💻 Notes
-
-* Make sure **Docker** is running on both slave instances.
-* Keep agent terminals open (or configure them as services).
-* Allow public access to port **8080**, **80**, and **82** for external visibility.
-* Make sure the GitHub repo has:
-
-  * `Dockerfile`
-  * `index.html`
-  * `images/` folder with `1.jpg`, `2.jpg`
-
----
+```
 
 ## 🧠 Summary
 

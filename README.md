@@ -1,4 +1,5 @@
-```
+
+---
 
 ```markdown
 # 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
@@ -12,33 +13,37 @@ This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker*
 ```
 
 project-root/
-│
 ├── Dockerfile
 ├── index.html
-├── images/
-│   ├── 1.jpg
-│   └── 2.jpg
+└── images/
+├── 1.jpg
+└── 2.jpg
 
 ````
 
-**Dockerfile:**
+---
+
+## 🐳 Dockerfile
 
 ```dockerfile
 FROM hshar/webapp
 ADD ./devopsIQ /var/www/html/devopsIQ
 ````
 
-**index.html:**
+---
+
+## 🌐 index.html
 
 ```html
 <html>
-<title>Jenkins Final Website</title>
-<body background="images/1.jpg">
-</body>
+  <title>Jenkins Final Website</title>
+  <body background="images/1.jpg">
+  </body>
 </html>
 ```
 
 ---
+
 
 ## ☁️ Infrastructure Setup
 

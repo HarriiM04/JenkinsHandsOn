@@ -9,14 +9,14 @@ This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker*
 ```
 ## 📁 Project Structure
 
-
+```
 project-root/
 ├── Dockerfile
 ├── index.html
 └── images/
     ├── 1.jpg
     └── 2.jpg
-```
+
 
 ```
 ## 🐳 Dockerfile

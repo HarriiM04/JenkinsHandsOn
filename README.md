@@ -213,4 +213,4 @@ sudo docker run -it -p 82:80 -d test
 - ✅ Multi-node Jenkins setup (Master + Slaves)
 - ✅ GitHub-integrated CI/CD with Docker
 - ✅ Live deployment on EC2 using webhooks & jobs
-```
+

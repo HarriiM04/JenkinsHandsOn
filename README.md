@@ -5,11 +5,10 @@ Here's the **fully corrected and properly styled Markdown** version of your proj
 
 This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker**, and **GitHub** on **AWS EC2 Instances**, including **multi-node (Master-Slave) configuration**, **Docker deployment**, and **webhooks**.
 
----
-
+```
 ## 📁 Project Structure
 
-```
+
 project-root/
 ├── Dockerfile
 ├── index.html

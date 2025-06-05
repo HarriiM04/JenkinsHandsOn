@@ -18,8 +18,6 @@ project-root/
     └── 2.jpg
 ```
 
----
-
 ## 🐳 Dockerfile
 
 ```dockerfile

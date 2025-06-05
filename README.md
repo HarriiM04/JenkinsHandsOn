@@ -1,4 +1,4 @@
-
+```
 ```markdown
 # 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
 
@@ -26,7 +26,7 @@ project-root/
 ```dockerfile
 FROM hshar/webapp
 ADD ./devopsIQ /var/www/html/devopsIQ
-````
+```
 
 ---
 

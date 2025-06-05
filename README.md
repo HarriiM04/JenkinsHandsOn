@@ -1,6 +1,4 @@
-You're right — that section has mixed or incorrect markdown formatting for code blocks. Here's the corrected and properly styled version:
-
----
+Here is the **fully corrected and properly styled Markdown** version of your project setup. It ensures all code blocks and sections render cleanly in a Markdown viewer or GitHub README:
 
 ```markdown
 # 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
@@ -22,6 +20,28 @@ project-root/
 
 ````
 
+---
+
+## 🐳 Dockerfile
+
+```dockerfile
+FROM hshar/webapp
+ADD ./devopsIQ /var/www/html/devopsIQ
+````
+
+---
+
+## 🌐 index.html
+
+```html
+<html>
+  <title>Jenkins Final Website</title>
+  <body background="images/1.jpg">
+  </body>
+</html>
+```
+
+---
 
 ## ☁️ Infrastructure Setup
 
@@ -85,11 +105,13 @@ sudo ufw status
 
 ### 7. Access Jenkins UI
 
-```text
+Visit:
+
+```
 http://<YOUR_MASTER_PUBLIC_IP>:8080
 ```
 
-Get Jenkins password:
+Get initial password:
 
 ```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -99,7 +121,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ## ⚙️ Agent (Slave Node) Configuration
 
-### On Slaves:
+### On Each Slave
 
 1. Install Java:
 
@@ -110,20 +132,20 @@ sudo apt install openjdk-21-jre-headless -y
 
 2. Download & Connect Agent:
 
-Get the commands from:
+Go to:
 
 **Jenkins > Manage Jenkins > Nodes > NodeName > Launch agent**
 
-Example:
+Run:
 
 ```bash
 curl -sO http://<master-ip>:8080/jnlpJars/agent.jar
 java -jar agent.jar -url http://<master-ip>:8080/ -secret <secret> -name slaveX -webSocket -workDir "/home/ubuntu/jenkins"
 ```
 
-⛔ **Do NOT close this terminal — keep it running.**
+➡️ **Keep this terminal open.**
 
-3. In a second terminal, install Docker:
+3. In a new terminal, install Docker:
 
 ```bash
 sudo apt install docker.io -y
@@ -135,9 +157,9 @@ sudo apt install docker.io -y
 
 ### Job 1 (on `slave1`)
 
-* Source Code: GitHub Repo
+* Source: GitHub repo
 * Branch: `*/main`
-* Shell:
+* Shell Build Step:
 
 ```bash
 sudo docker rm -f $(sudo docker ps -a -q)
@@ -145,7 +167,7 @@ sudo docker build /home/ubuntu/jenkins/workspace/Test -t test
 sudo docker run -it -p 82:80 -d test
 ```
 
-* Add GitHub webhook trigger: ✅
+* Trigger: ✅ GitHub hook
 
 ---
 
@@ -153,52 +175,56 @@ sudo docker run -it -p 82:80 -d test
 
 * Same as Job 1, but:
 
-  * Use different port: `80:80`
-  * No webhook trigger
+  * Port: `80:80`
+  * No trigger
 
 ---
 
-### Trigger & Pipeline
+## 🔄 Pipeline Setup
 
-* Add **Post Build Action** in Job 1 → trigger Job 2.
-* Create a new Jenkins view: **Pipeline View**
+* **Post-build action** in Job 1: Trigger Job 2
+* Create view: **Build Pipeline View**
 
-  * Initial Job: `job1`
-* Install **Build Pipeline Plugin** from **Manage Jenkins > Plugins**
-
----
-
-## 🌐 GitHub Webhook Setup
-
-* Go to your GitHub Repo > Settings > Webhooks
-* Payload URL: `http://<master-ip>:8080/github-webhook/`
-* Content type: `application/json`
-* Events: **Just the push event**
-* Click **Add webhook**
+  * Initial Job: `Job 1`
+* Plugin: **Build Pipeline Plugin**
 
 ---
 
-## 🔁 End-to-End CI/CD Flow
+## 🔗 GitHub Webhook Setup
 
-1. Make changes in local repo.
-2. Push to GitHub.
-3. Jenkins webhook triggers `job1`.
-4. `job1` builds & deploys Docker container on `slave1`.
-5. After success, `job2` is triggered.
-6. `job2` builds & deploys container on `slave2`.
+* Go to GitHub Repo → Settings → Webhooks
+* Add new webhook:
+
+  * Payload URL: `http://<master-ip>:8080/github-webhook/`
+  * Content type: `application/json`
+  * Trigger: Push events
+
+---
+
+## 🔁 CI/CD Flow Summary
+
+1. Developer pushes code to GitHub
+2. Jenkins gets triggered via webhook
+3. Job 1 builds & deploys on Slave 1 (port 82)
+4. Job 2 builds & deploys on Slave 2 (port 80)
+5. Pipeline visualized in Jenkins dashboard
 
 ---
 
 ## ✅ Output Preview
 
-* `http://<slave1-ip>:82` → Deployed site from Job 1
-* `http://<slave2-ip>:80` → Deployed site from Job 2
+* `http://<slave1-ip>:82` → Output from Job 1
+* `http://<slave2-ip>:80` → Output from Job 2
 
-```
+---
 
 ## 🧠 Summary
 
-* ✅ Multi-node Jenkins setup with master-slave architecture.
-* ✅ Real Docker deployment with GitHub CI/CD integration.
-* ✅ Webhook-triggered build pipeline with Docker containers.
+* ✅ Multi-node Jenkins setup (Master + Slaves)
+* ✅ GitHub-integrated CI/CD with Docker
+* ✅ Live deployment on EC2 using webhooks & jobs
+
+```
+
+Let me know if you'd like this content saved to a `.md` file.
 ```

@@ -1,7 +1,8 @@
 
 ```
 
-# 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
+## 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
+```
 ```markdown
 This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker**, and **GitHub** on **AWS EC2 Instances**, including **multi-node (Master-Slave) configuration**, **Docker deployment**, and **webhooks**.
 

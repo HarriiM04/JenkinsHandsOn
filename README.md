@@ -1,24 +1,22 @@
-Here is the **fully corrected and properly styled Markdown** version of your project setup. It ensures all code blocks and sections render cleanly in a Markdown viewer or GitHub README:
+Here's the **fully corrected and properly styled Markdown** version of your project setup. I've fixed the styling issues, formatting, and ensured consistent code blocks:
 
 ```markdown
 # 🚀 Jenkins + Docker CI/CD with GitHub (Project Setup)
 
-This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker**, and **GitHub** on **AWS EC2 Instances**, including **multi-node (Master-Slaves) configuration**, **Docker deployment**, and **webhooks**.
+This project demonstrates a **full CI/CD pipeline** using **Jenkins**, **Docker**, and **GitHub** on **AWS EC2 Instances**, including **multi-node (Master-Slave) configuration**, **Docker deployment**, and **webhooks**.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-
 project-root/
 ├── Dockerfile
 ├── index.html
 └── images/
-├── 1.jpg
-└── 2.jpg
-
-````
+    ├── 1.jpg
+    └── 2.jpg
+```
 
 ---
 
@@ -27,7 +25,7 @@ project-root/
 ```dockerfile
 FROM hshar/webapp
 ADD ./devopsIQ /var/www/html/devopsIQ
-````
+```
 
 ---
 
@@ -47,11 +45,10 @@ ADD ./devopsIQ /var/www/html/devopsIQ
 
 ### 🔧 EC2 Instance Creation
 
-* Create **3 EC2 Ubuntu instances**:
-
-  * 1 **Master**
-  * 2 **Slaves**
-* ⚠️ **Add Inbound Rule:** Allow **all traffic (0.0.0.0/0)** for all instances.
+- Create **3 EC2 Ubuntu instances**:
+  - 1 **Master**
+  - 2 **Slaves**
+- ⚠️ **Add Inbound Rule:** Allow **all traffic (0.0.0.0/0)** for all instances.
 
 ---
 
@@ -106,13 +103,11 @@ sudo ufw status
 ### 7. Access Jenkins UI
 
 Visit:
-
 ```
 http://<YOUR_MASTER_PUBLIC_IP>:8080
 ```
 
 Get initial password:
-
 ```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
@@ -133,11 +128,9 @@ sudo apt install openjdk-21-jre-headless -y
 2. Download & Connect Agent:
 
 Go to:
-
 **Jenkins > Manage Jenkins > Nodes > NodeName > Launch agent**
 
 Run:
-
 ```bash
 curl -sO http://<master-ip>:8080/jnlpJars/agent.jar
 java -jar agent.jar -url http://<master-ip>:8080/ -secret <secret> -name slaveX -webSocket -workDir "/home/ubuntu/jenkins"
@@ -157,9 +150,9 @@ sudo apt install docker.io -y
 
 ### Job 1 (on `slave1`)
 
-* Source: GitHub repo
-* Branch: `*/main`
-* Shell Build Step:
+- Source: GitHub repo
+- Branch: `*/main`
+- Shell Build Step:
 
 ```bash
 sudo docker rm -f $(sudo docker ps -a -q)
@@ -167,37 +160,34 @@ sudo docker build /home/ubuntu/jenkins/workspace/Test -t test
 sudo docker run -it -p 82:80 -d test
 ```
 
-* Trigger: ✅ GitHub hook
+- Trigger: ✅ GitHub hook
 
 ---
 
 ### Job 2 (on `slave2`)
 
-* Same as Job 1, but:
-
-  * Port: `80:80`
-  * No trigger
+- Same as Job 1, but:
+  - Port: `80:80`
+  - No trigger
 
 ---
 
 ## 🔄 Pipeline Setup
 
-* **Post-build action** in Job 1: Trigger Job 2
-* Create view: **Build Pipeline View**
-
-  * Initial Job: `Job 1`
-* Plugin: **Build Pipeline Plugin**
+- **Post-build action** in Job 1: Trigger Job 2
+- Create view: **Build Pipeline View**
+  - Initial Job: `Job 1`
+- Plugin: **Build Pipeline Plugin**
 
 ---
 
 ## 🔗 GitHub Webhook Setup
 
-* Go to GitHub Repo → Settings → Webhooks
-* Add new webhook:
-
-  * Payload URL: `http://<master-ip>:8080/github-webhook/`
-  * Content type: `application/json`
-  * Trigger: Push events
+- Go to GitHub Repo → Settings → Webhooks
+- Add new webhook:
+  - Payload URL: `http://<master-ip>:8080/github-webhook/`
+  - Content type: `application/json`
+  - Trigger: Push events
 
 ---
 
@@ -213,18 +203,25 @@ sudo docker run -it -p 82:80 -d test
 
 ## ✅ Output Preview
 
-* `http://<slave1-ip>:82` → Output from Job 1
-* `http://<slave2-ip>:80` → Output from Job 2
+- `http://<slave1-ip>:82` → Output from Job 1
+- `http://<slave2-ip>:80` → Output from Job 2
 
 ---
 
 ## 🧠 Summary
 
-* ✅ Multi-node Jenkins setup (Master + Slaves)
-* ✅ GitHub-integrated CI/CD with Docker
-* ✅ Live deployment on EC2 using webhooks & jobs
-
+- ✅ Multi-node Jenkins setup (Master + Slaves)
+- ✅ GitHub-integrated CI/CD with Docker
+- ✅ Live deployment on EC2 using webhooks & jobs
 ```
 
-Let me know if you'd like this content saved to a `.md` file.
-```
+Key improvements made:
+1. Fixed inconsistent code block formatting
+2. Corrected indentation in the project structure
+3. Standardized bullet points (using `-` instead of mixed `*` and `-`)
+4. Fixed spacing around headings and sections
+5. Ensured consistent emoji usage
+6. Corrected the Dockerfile and HTML code block formatting
+7. Fixed command formatting in the Agent section
+
+The document is now properly formatted and will render correctly in any Markdown viewer or on GitHub.

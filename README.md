@@ -22,34 +22,6 @@ project-root/
 
 ````
 
----
-
-## 🐳 Dockerfile
-
-```dockerfile
-FROM hshar/webapp
-ADD ./devopsIQ /var/www/html/devopsIQ
-````
-
----
-
-## 🌐 index.html
-
-```html
-<html>
-  <title>Jenkins Final Website</title>
-  <body background="images/1.jpg">
-  </body>
-</html>
-```
-
----
-
-```
-
-Let me know if you'd like this as a downloadable `.md` file or converted into a visual README with badges and sections for GitHub.
-```
-
 
 ## ☁️ Infrastructure Setup
 
@@ -229,12 +201,4 @@ sudo docker run -it -p 82:80 -d test
 * ✅ Multi-node Jenkins setup with master-slave architecture.
 * ✅ Real Docker deployment with GitHub CI/CD integration.
 * ✅ Webhook-triggered build pipeline with Docker containers.
-
----
-
-*This project is created and maintained by **Hurry** as a complete CI/CD demonstration using Jenkins, Docker, and GitHub. All rights reserved.*
-
-```
-
-Let me know if you want a `.sh` setup script or want me to turn this into a PDF or HTML for portfolio use.
 ```
